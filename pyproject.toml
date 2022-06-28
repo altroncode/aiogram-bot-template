@@ -1,12 +1,13 @@
 [tool.poetry]
 name = "aiogram-bot-template"
 version = "0.1.0"
-description = ""
-authors = ["altcode <cosmosx1328@gmail.com>"]
+description = "Template for creating bots using aiogram. "
+authors = ["altroncode <cosmosx1328@gmail.com>"]
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = "^3.10"
 environs = "^9.5.0"
+aiogram = "^2.21"
 
 [tool.poetry.dev-dependencies]
 
