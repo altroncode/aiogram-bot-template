@@ -8,6 +8,7 @@ authors = [""]
 python = "^3.10"
 environs = "^9.5.0"
 aiogram = "^2.21"
+tomli = "^2.0.1"
 
 [tool.poetry.dev-dependencies]
 
