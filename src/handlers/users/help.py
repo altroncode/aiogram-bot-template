@@ -6,5 +6,5 @@ import responses.help
 
 
 @dp.message_handler(filters.CommandHelp())
-async def bot_help(message: aiogram.types.Message):
+async def help_message(message: aiogram.types.Message):
     await responses.help.HelpResponse(message)
