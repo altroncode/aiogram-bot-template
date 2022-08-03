@@ -1,11 +1,11 @@
-from aiogram import types
-from aiogram.dispatcher.filters.builtin import CommandHelp
+from aiogram.dispatcher import filters
+import aiogram.types
 
 from loader import dp
 
 
-@dp.message_handler(CommandHelp())
-async def bot_help(message: types.Message):
+@dp.message_handler(filters.CommandHelp())
+async def bot_help(message: aiogram.types.Message):
     text = ("Список команд: ",
             "/start - Начать диалог",
             "/help - Получить справку")
