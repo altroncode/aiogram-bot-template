@@ -1,5 +1,5 @@
 [tool.poetry]
-name = ""
+name = "aiogram-bot-template"
 version = "0.1.0"
 description = ""
 authors = [""]
@@ -7,9 +7,9 @@ authors = [""]
 [tool.poetry.dependencies]
 python = "^3.10"
 environs = "^9.5.0"
-aiogram = "^2.21"
 tomli = "^2.0.1"
-SQLAlchemy = "^1.4.39"
+SQLAlchemy = "^1.4.38"
+aiogram = "^2.23.1"
 
 [tool.poetry.dev-dependencies]
 
