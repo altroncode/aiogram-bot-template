@@ -1,8 +1,9 @@
-import environs
+import pydantic
 
 
-env = environs.Env()
-env.read_env()
+class BotConfig(pydantic.BaseSettings):
+    token: str = pydantic.Field(env='BOT_TOKEN')
 
-BOT_TOKEN = env("BOT_TOKEN")
-DATABASE_URI = env("DATABASE_URI", None)
+
+class DatabaseConfig(pydantic.BaseSettings):
+    uri: str = pydantic.Field(env='DATABASE_URI')
