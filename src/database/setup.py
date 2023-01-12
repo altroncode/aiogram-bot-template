@@ -1,4 +1,4 @@
-from utils.db_api import base, engine
+from database import base, engine
 
 
 def setup_database():

@@ -1,7 +1,7 @@
 from sqlalchemy import sql
 import sqlalchemy
 
-from utils.db_api import base
+from database import base
 
 
 class BaseModel(base.Base):
