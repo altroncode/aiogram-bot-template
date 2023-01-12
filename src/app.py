@@ -1,12 +1,27 @@
+import aiogram
+import aiogram.contrib.fsm_storage.memory
 from aiogram import executor
+from aiogram.contrib import fsm_storage
+import dotenv
 
-from handlers import dp
-from utils.set_bot_commands import set_default_commands
+import commands
+import config
+import handlers
+import middlewares
 
 
-async def on_startup(dispatcher):
-    await set_default_commands(dispatcher)
+async def on_startup(dispatcher: aiogram.Dispatcher):
+    dotenv.load_dotenv()
+    await commands.set_default_commands(dispatcher)
+    handlers.register_handlers(dispatcher)
+    dispatcher.setup_middleware(middlewares.CallbackDataDTOInjectMiddleware())
+
+
+def main():
+    bot = aiogram.Bot(config.BotConfig().token, parse_mode=aiogram.types.ParseMode.HTML)
+    dispatcher = aiogram.Dispatcher(bot, storage=fsm_storage.memory.MemoryStorage())
+    executor.start_polling(dispatcher, on_startup=on_startup, skip_updates=True)
 
 
 if __name__ == '__main__':
-    executor.start_polling(dp, on_startup=on_startup)
+    main()
